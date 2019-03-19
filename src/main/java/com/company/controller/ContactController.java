@@ -37,7 +37,7 @@ public class ContactController {
     public Contact update(@PathVariable("id") Long id, Contact contactFromDb,
                           @RequestBody Contact contact) {
         BeanUtils.copyProperties(contact, contactFromDb, "id");
-        return contactRepository.save(contact);
+        return contactRepository.save(contactFromDb);
     }
 
     @DeleteMapping("/{id}")
